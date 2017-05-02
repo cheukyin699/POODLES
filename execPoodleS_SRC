@@ -1,0 +1,41 @@
+#!/bin/bash
+
+echo "input:$1, num:$2"
+
+if [ "$2" -ge 3 ];
+then
+echo usage: execPoodleS.sh inputFile model
+echo "Chose model from 0-3"
+exit
+fi
+
+INSTALLDIR=/home/shimizu/POODLE-S-cpy/
+LOCATION_BLASTPGP=/home/shimizu/blast-2.2.14/bin/blastpgp
+LOCATION_MAKEMAT=/home/shimizu/blast-2.2.14/bin/makemat
+LOCATION_NR=/home/shimizu/nrdata/nr
+
+cp -f $1 psitmp.fst 
+mkdir sc_targets
+mkdir targets
+mkdir rs_targets
+mkdir mgr
+mkdir caspFmt
+$LOCATION_BLASTPGP -b 0 -j 3 -h 0.001 -d $LOCATION_NR -i psitmp.fst -C psitmp.chk > blast.log
+echo psitmp.chk > psitmp.pn
+echo psitmp.fst > psitmp.sn
+$LOCATION_MAKEMAT -P psitmp
+
+../../POODLES-v1.0/POODLES-EX -c $INSTALLDIR psitmp 0
+../../POODLES-v1.0/POODLES-EX -e $INSTALLDIR psitmp 0
+chmod 755 ./oneScale.sh
+./oneScale.sh
+chmod 755 ./predict.sh
+./predict.sh
+../../POODLES-v1.0/POODLES-EX -m $INSTALLDIR psitmp $2
+
+rm -rf sc_targets
+rm -rf targets
+rm -rf rs_targets
+rm psitmp.*
+rm oneScale.sh
+rm predict.sh
