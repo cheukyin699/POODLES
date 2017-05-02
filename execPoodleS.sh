@@ -2,7 +2,7 @@
 
 #usage execPoodleS.sh LIST FASTA_DIR
 
-INSTALLDIR=/home/shimizu/POODLE-S-cpy/
+INSTALLDIR=/data/share/POODLE-S-cpy/
 
 cat $1 | while read list
 
