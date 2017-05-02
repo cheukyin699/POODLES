@@ -1,4 +1,7 @@
+#include <cstring>
 #include "param.h"
+
+using std::memset;
 
 /**********
 @\‘¢‘Ì
