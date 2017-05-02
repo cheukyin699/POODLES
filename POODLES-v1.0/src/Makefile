@@ -1,24 +1,17 @@
 CC  = g++
+CXXFLAGS = -c -O2 -Wall -Wextra
+LDFLAGS = -lm -O2
 OBJ = BioTables.o Files.o PoodleS.o server.o SVMsmplStatus.o
+EXE = POODLES-EX
 
-POODLES-EX: $(OBJ)            
-	$(CC) -o $@ $(OBJ) -lm
-	cp POODLES-EX ../
+all: $(EXE)
 
-BioTables.o: BioTables.cpp stdafx.h
-	$(CC) -c BioTables.cpp 
+$(EXE): $(OBJ)            
+	$(CC) -o $@ $(OBJ) $(LDFLAGS)
+	cp $(EXE) -t ..
 
-Files.o: Files.cpp stdafx.h
-	$(CC) -c Files.cpp 
-
-PoodleS.o: PoodleS.cpp stdafx.h
-	$(CC) -c PoodleS.cpp 
-
-server.o: server.cpp stdafx.h
-	$(CC) -c server.cpp 
-
-SVMsmplStatus.o: SVMsmplStatus.cpp stdafx.h
-	$(CC) -c SVMsmplStatus.cpp 
+%.o: %.cpp stdafx.h
+	$(CC) $(CXXFLAGS) $< -o $@
 
 clean:
-	rm *.o *~ ../POODLES-EX
+	rm -f $(OBJ) *~ ../$(EXE)
