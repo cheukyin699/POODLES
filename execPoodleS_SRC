@@ -9,10 +9,10 @@ echo "Chose model from 0-3"
 exit
 fi
 
-INSTALLDIR=/data/share/POODLE-S-cpy/
-LOCATION_BLASTPGP=/home/shimizu/blast-2.2.14/bin/blastpgp
-LOCATION_MAKEMAT=/home/shimizu/blast-2.2.14/bin/makemat
-LOCATION_NR=/home/shimizu/nrdata/nr
+INSTALLDIR=/data/share/GenSET_root/programs/attribute_programs/POODLE-S
+LOCATION_BLASTPGP=$INSTALLDIR/blast-2.2.18/bin/blastpgp
+LOCATION_MAKEMAT=$INSTALLDIR/blast-2.2.18/bin/makemat
+LOCATION_NR=$INSTALLDIR/nrdata/nr
 
 cp -f $1 psitmp.fst 
 mkdir sc_targets

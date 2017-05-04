@@ -2,7 +2,7 @@
 
 #usage execPoodleS.sh LIST FASTA_DIR
 
-INSTALLDIR=/data/share/POODLE-S-cpy/
+INSTALLDIR=/data/share/GenSET_root/programs/attribute_programs/POODLE-S
 
 cat $1 | while read list
 

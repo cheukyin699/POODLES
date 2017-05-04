@@ -1,2 +1,5 @@
 *.o
 POODLES-EX
+blast-*
+nrdata/*
+usrData/*
