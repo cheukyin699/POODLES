@@ -67,7 +67,7 @@ void PBMatrix::ReadMtxFile(string matrixfile, vector<Elements> &seqRawData){
 		string tmp(buf);
 		if(lCnt>13 && tmp.size()>1){
 			aCnt=0;
-			for(mCnt=0;mCnt<24;mCnt++){		  
+			for(mCnt=0;mCnt<24;mCnt++){
 				if(mCnt!=0 && mCnt!=2 && mCnt!=21 && aCnt<NUM_OF_ACIDS){
 					str = tmp.substr(0, tmp.find(" "));
 					//		    cerr<<str<<" ";

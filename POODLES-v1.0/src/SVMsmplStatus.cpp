@@ -26,7 +26,7 @@ void SVMSmplStatus::outToFile(char *filename){
 	outFile<<minDisLen<<"\n";
 	outFile<<maxDisLen<<"\n";
 	for(int i=0;i<NUM_OF_FEATURE-2;i++){
-		outFile<<ftr.ftr[i]<<"\n";	
+		outFile<<ftr.ftr[i]<<"\n";
 	}
 
 	outFile.close();
@@ -53,7 +53,7 @@ void SVMSmplStatus::InputFromFile(char *filename){
 	inFile>>minDisLen;
 	inFile>>maxDisLen;
 	for(int i=0;i<NUM_OF_FEATURE-2;i++){
-		inFile>>ftr.ftr[i];	
+		inFile>>ftr.ftr[i];
 	}
 
 	inFile.close();

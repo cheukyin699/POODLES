@@ -3,3 +3,7 @@ POODLES-EX
 blast-*
 nrdata/*
 usrData/*
+results/*
+logs/*
+lists/*
+fasta/*

@@ -6,7 +6,7 @@ EXE = POODLES-EX
 
 all: $(EXE)
 
-$(EXE): $(OBJ)            
+$(EXE): $(OBJ)
 	$(CC) -o $@ $(OBJ) $(LDFLAGS)
 	cp $(EXE) -t ..
 
